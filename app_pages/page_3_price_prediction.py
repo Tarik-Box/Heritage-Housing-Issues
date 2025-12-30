@@ -3,6 +3,16 @@ import joblib
 import numpy as np
 import pandas as pd
 
+@st.cache_resource
+def load_model():
+    """Loads the trained ML model from the .joblib file and caches it."""
+    try:
+        model = joblib.load('src/heritage_housing_model.joblib')
+        return model
+    except FileNotFoundError:
+        # This will be caught and handled in the page body
+        return None
+
 def page_3_price_prediction_body():
     """Displays the Price Prediction page content."""
     st.header("Price Prediction")
@@ -14,15 +24,14 @@ def page_3_price_prediction_body():
         "the 'Overall Quality' and 'Above Ground Living Area' of the property."
     )
 
-    # Load the trained model
-    try:
-        model = joblib.load('src/heritage_housing_model.joblib')
-    except FileNotFoundError:
+    # Load the trained model using the cached function
+    model = load_model()
+    
+    if model is None:
         st.error("Error: Model file not found. Please ensure 'heritage_housing_model.joblib' is in the 'src/' directory.")
         return
 
-    # Define features for input (based on what the model was trained on)
-    # Our model was trained on 'OverallQual' and 'GrLivArea'
+    # Define features for input
     st.subheader("Input House Features")
 
     # Input widgets for features
@@ -39,7 +48,6 @@ def page_3_price_prediction_body():
     )
 
     # Create a DataFrame for prediction
-    # Ensure column names match the features used during training
     input_data = pd.DataFrame([[overall_qual, gr_liv_area]], columns=['OverallQual', 'GrLivArea'])
 
     st.write("---")

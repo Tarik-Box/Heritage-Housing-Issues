@@ -3,6 +3,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+@st.cache_data
+def load_data():
+    """Loads the Ames Housing dataset from its URL and caches it."""
+    url = 'https://raw.githubusercontent.com/INRIA/scikit-learn-mooc/main/datasets/ames_housing_no_missing.csv'
+    df = pd.read_csv(url)
+    return df
+
 def page_2_data_analysis_body():
     """Displays the Data Analysis page content."""
     st.header("Data Analysis")
@@ -14,9 +21,8 @@ def page_2_data_analysis_body():
         "helping us understand the market dynamics in Ames, Iowa."
     )
 
-    # Load the dataset (re-loading for independent page execution)
-    url = 'https://raw.githubusercontent.com/INRIA/scikit-learn-mooc/main/datasets/ames_housing_no_missing.csv'
-    df = pd.read_csv(url)
+    # Load the dataset using the cached function
+    df = load_data()
 
     st.write("---")
 
