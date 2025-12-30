@@ -79,7 +79,18 @@ To run this application on your local machine:
 
 ### Deployment on Heroku
 
-*(This section will be updated with live Heroku link and detailed deployment steps once the application is deployed.)*
+The application is deployed on Heroku and can be accessed live at:
+[https://ci-heritage-housing-predictor-7f5331ad4224.herokuapp.com/](https://ci-heritage-housing-predictor-7f5331ad4224.herokuapp.com/)
+
+**Deployment Process:**
+
+1.  **Heroku Account & CLI:** Ensure you have a Heroku account and the Heroku CLI installed and logged in.
+2.  **Create Heroku App:** From your project directory, run `heroku create YOUR_APP_NAME` (replace `YOUR_APP_NAME` with a unique name, e.g., `ci-heritage-housing-predictor`).
+3.  **Configure Buildpacks:** Heroku automatically detects the Python buildpack.
+4.  **Push to Heroku:** Deploy the application by pushing your Git repository to Heroku: `git push heroku main`.
+5.  **Access Application:** Once deployed, open the app in your browser: `heroku open`.
+6.  **Troubleshooting:** Check Heroku logs (`heroku logs --tail`) for any deployment issues.
+
 
 ## Credits
 

@@ -1,3 +1,4 @@
 #!/bin/bash
-# setup.sh will be used for any pre-deployment setup commands.
-# For example, installing system dependencies or setting up specific environment variables.
+mkdir -p ~/.streamlit/
+echo "[server]\nheadless = true\nenableCORS=false\nport=$PORT\n" > ~/.streamlit/config.toml
+echo "[general]\nemail=\"\"\n" > ~/.streamlit/credentials.toml
