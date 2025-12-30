@@ -1,5 +1,6 @@
 import streamlit as st
 from app_pages.page_1_summary import page_1_summary_body
+from app_pages.page_2_data_analysis import page_2_data_analysis_body
 
 def main():
     """Main function to set up and run the Streamlit app."""
@@ -12,7 +13,8 @@ def main():
     
     # Define available pages
     PAGES = {
-        "Project Summary": page_1_summary_body
+        "Project Summary": page_1_summary_body,
+        "Data Analysis": page_2_data_analysis_body
     }
     
     selected_page = st.sidebar.radio("Go to", list(PAGES.keys()))
