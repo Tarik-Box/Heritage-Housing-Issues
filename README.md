@@ -21,8 +21,6 @@
 
 ---
 
-> **Note:** The live Heroku deployment is currently experiencing an application error. This is a known issue and is actively being debugged.
-
 <div align="center">
 
 **[View Live Demo on Heroku](https://ci-heritage-housing-predictor-7f5331ad4224.herokuapp.com/)**
