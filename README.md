@@ -34,21 +34,27 @@ This project is a data science tool I built to bring some data-driven insights t
 
 I followed a simplified version of the CRISP-DM methodology, focusing on creating a functional and valuable tool that solves a real-world business problem.
 
-## 🎯 Business Requirements
+## 🎯 ML Business Case
 
-I imagined a fictional real estate agency, 'Heritage Housing', that needed help with two main things:
+The primary business need is to develop a tool for a fictional real estate agency to better understand and predict house prices in Ames, Iowa. This involves two main **machine learning tasks**:
 
-1.  **Find the biggest value drivers:** They wanted to know which property features have the biggest impact on the final sale price.
-2.  **Predict sale prices:** They needed a tool to give them reliable price estimates to help with pricing houses and managing their clients' expectations.
-
-The main goal was to build a model with an **R-squared (R²) score of at least 0.75**. This would mean the model is reliable enough for them to use for business decisions.
+1.  **Correlation Study:** To satisfy the client's interest in discovering how house **attributes** (also known as **features** or **variables**) correlate with sale prices. The **target** variable for this study is `SalePrice`. The insights from this study are presented on the "Data Analysis" page.
+2.  **Regression Task:** To address the client's need to predict the `SalePrice` **label** for any given house. For this task, we will **train** (or **fit**) a regression model using the most predictive **features**. The **model output** will be a single numerical **prediction**. The success of this model will be evaluated using R² as the primary **metric**. The main goal is to achieve an R² score of at least 0.75, which will confirm the model's reliability for business use.
 
 ---
 
 ### Hypothesis and How to Validate
 
--   **Hypothesis:** I hypothesize that a house's overall quality and its above-ground living area are strong positive predictors of its sale price. A machine learning model trained on these features should be able to predict sale prices with an R² score of at least 0.75.
--   **Validation:** The hypothesis was validated by training a `RandomForestRegressor` model and evaluating it on a test set. The model achieved an R² score of **0.81**, which surpassed the 0.75 target, thus confirming the hypothesis.
+Three hypotheses were formulated to guide the project and deepen our understanding of the data:
+
+1.  **Hypothesis 1:** A house's overall quality (`OverallQual`) and its above-ground living area (`GrLivArea`) are strong positive predictors of its sale price.
+    *   **Validation:** This was validated by training a `RandomForestRegressor` model on these two features. The model achieved an R² score of **0.81** on the test set, surpassing the 0.75 target and confirming the predictive power of these features.
+
+2.  **Hypothesis 2:** The relationship between `GrLivArea` and `SalePrice` is not perfectly linear and will exhibit diminishing returns.
+    *   **Validation:** The scatter plot on the "Data Analysis" page shows a strong positive correlation, but it also shows that as `GrLivArea` becomes very large, the increase in `SalePrice` becomes less steep. This visual evidence supports the hypothesis of diminishing returns.
+
+3.  **Hypothesis 3:** A simplified model using only the two most correlated features (`OverallQual`, `GrLivArea`) is sufficient to meet the business requirement, avoiding unnecessary complexity.
+    *   **Validation:** This was validated by the fact that our model, using only these two features, successfully exceeded the R² target of 0.75. This justifies the decision to prioritize a simpler, more interpretable model over a more complex one that might include more features with less predictive power.
 
 ### Rationale
 

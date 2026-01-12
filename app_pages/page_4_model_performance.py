@@ -17,7 +17,7 @@ def load_data_for_performance():
 def load_model_for_performance():
     """Loads the trained ML model."""
     try:
-        model = joblib.load('src/heritage_housing_model.joblib')
+        model = joblib.load('outputs/v1/heritage_housing_model.joblib')
         return model
     except FileNotFoundError:
         return None

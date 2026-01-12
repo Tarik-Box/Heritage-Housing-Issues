@@ -7,7 +7,7 @@ import pandas as pd
 def load_model():
     """Loads the trained ML model from the .joblib file and caches it."""
     try:
-        model = joblib.load('src/heritage_housing_model.joblib')
+        model = joblib.load('outputs/v1/heritage_housing_model.joblib')
         return model
     except FileNotFoundError:
         return None
@@ -31,7 +31,7 @@ def page_3_price_prediction_body():
     inherited_houses_df = load_inherited_houses_data()
 
     if model is None:
-        st.error("Error: Model file not found. Please ensure 'heritage_housing_model.joblib' is in the 'src/' directory.")
+        st.error("Error: Model file not found. Please ensure 'heritage_housing_model.joblib' is in the 'outputs/v1/' directory.")
         return
     
     if inherited_houses_df is None:
