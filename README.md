@@ -45,6 +45,18 @@ The main goal was to build a model with an **R-squared (R²) score of at least 0
 
 ---
 
+### Hypothesis and How to Validate
+
+-   **Hypothesis:** I hypothesize that a house's overall quality and its above-ground living area are strong positive predictors of its sale price. A machine learning model trained on these features should be able to predict sale prices with an R² score of at least 0.75.
+-   **Validation:** The hypothesis was validated by training a `RandomForestRegressor` model and evaluating it on a test set. The model achieved an R² score of **0.81**, which surpassed the 0.75 target, thus confirming the hypothesis.
+
+### Rationale
+
+-   To address the business need to **"find the biggest value drivers,"** I conducted an exploratory data analysis and included visualizations (like the `SalePrice vs. Overall Quality` box plot) in the "Data Analysis" page of the app. This allows stakeholders to visually confirm the factors that most influence price.
+-   To address the business need to **"predict sale prices,"** I developed a regression model and built the "Price Prediction" page. This provides a direct tool for agents to generate price estimates based on key house features.
+
+---
+
 ## Dataset and Preparation
 
 The data for this project is a pre-cleaned version of the famous **Ames Housing Dataset**, which describes the sale of individual residential properties in Ames, Iowa from 2006 to 2010.
@@ -100,6 +112,12 @@ The main feature of the app. Here, users can input values for `OverallQual` and 
 
 ---
 
+### Unfixed Bugs
+
+-   There are no known unfixed bugs.
+
+---
+
 ## 📂 File Structure
 
 The repository is organized as follows:
@@ -125,6 +143,20 @@ The repository is organized as follows:
 └───src/
     └───heritage_housing_model.joblib # The saved, trained model
 ```
+
+---
+
+## 🛠️ Libraries and Technologies Used
+
+| Library | Version | Usage |
+|---|---|---|
+| **Pandas** | `2.2.2` | Used for loading the dataset from its source and for creating the DataFrame passed to the model for prediction. |
+| **Scikit-learn** | `1.5.0` | Used to train and evaluate the `RandomForestRegressor` model. |
+| **Streamlit** | `1.36.0` | Used to build the entire user-facing web application and its interactive widgets. |
+| **Seaborn** | `0.13.2` | Used to create the data visualizations on the "Data Analysis" page, such as the `SalePrice vs. Overall Quality` box plot. |
+| **Jupyter** | `1.0.0` | Used as the primary environment for data exploration, analysis, and model development in the notebooks. |
+
+*Note: Versions are sourced from the `requirements.txt` file and may vary.*
 
 ---
 
