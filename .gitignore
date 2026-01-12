@@ -32,3 +32,5 @@ Thumbs.db
 *.keras
 *.zip
 *.csv
+notebooks/outputs/
+notebooks/outputs/
