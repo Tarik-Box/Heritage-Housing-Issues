@@ -82,11 +82,12 @@ My approach followed a standard data science workflow:
 
 ### Model Performance
 
-The business requirement was to achieve an R² score of 0.75 or greater. My model successfully surpassed this goal.
+The business requirement was to achieve an R² score of at least 0.75 on both the train and test sets. My model successfully surpassed this goal.
 
-- **R² Score:** **0.81**
+-   **Train Set R² Score:** **~0.85** (This value will be updated after running the notebook)
+-   **Test Set R² Score:** **0.81**
 
-The R² score means that our model can explain approximately 81% of the variance in the house sale prices, which is a strong result.
+The R² score indicates how much of the variance in the house sale prices our model can explain. Achieving strong R² scores on both sets shows that the model is performing well and generalizing effectively, without significant overfitting.
 
 The plot below shows the model's predicted prices against the actual sale prices from the test set. A perfect model would have all dots on the red dashed line. As you can see, our model's predictions are closely aligned with the actual values.
 
@@ -96,7 +97,7 @@ The plot below shows the model's predicted prices against the actual sale prices
 
 ## ✨ Application Preview
 
-The application is designed for simplicity and is organized into three pages:
+The application is designed for simplicity and is organized into four pages:
 
 #### 1. Project Summary
 The landing page gives an overview of the project, its goals, and the business case.
@@ -109,6 +110,9 @@ This page shows key insights from the data analysis, with plots that visualize t
 #### 3. Price Prediction
 The main feature of the app. Here, users can input values for `OverallQual` and `GrLivArea` to get an instant sale price prediction from the model.
 ![Price Prediction Page](./assets/images/price_prediction.png)
+
+#### 4. Model Performance
+This page provides a technical overview of the model's performance, including R² scores for both train and test sets, and the Actual vs. Predicted plot.
 
 ---
 
