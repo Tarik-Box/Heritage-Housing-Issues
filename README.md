@@ -159,7 +159,36 @@ To run this application on your local machine, follow these steps:
 
 ## 🔗 Deployment
 
-The application is deployed on Heroku.
+This application is deployed on Heroku. To deploy your own version, follow these steps after setting up the project locally:
+
+1.  **Heroku Account & CLI:**
+    *   Ensure you have a free Heroku account.
+    *   Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) on your machine.
+
+2.  **Log in to Heroku:**
+    *   Open your terminal and log in to your Heroku account:
+        ```bash
+        heroku login
+        ```
+
+3.  **Create a Heroku Application:**
+    *   Create a new app on Heroku. You can do this via the CLI (which also sets up the git remote automatically):
+        ```bash
+        heroku create your-unique-app-name
+        ```
+    *   Alternatively, you can create the app from the Heroku dashboard and then add the git remote manually from your app's "Deploy" tab.
+
+4.  **Push to Deploy:**
+    *   Once your git remote is set up, push the `main` branch to Heroku to trigger the build and deployment process:
+        ```bash
+        git push heroku main
+        ```
+
+5.  **Open the App:**
+    *   After the deployment is complete, you can open the app in your browser:
+        ```bash
+        heroku open
+        ```
 
 **Live URL:** [https://ci-heritage-housing-predictor-7f5331ad4224.herokuapp.com/](https://ci-heritage-housing-predictor-7f5331ad4224.herokuapp.com/)
 
@@ -167,5 +196,7 @@ The application is deployed on Heroku.
 
 ## 🙏 Credits
 
-*   **Dataset:** [Ames Housing Dataset](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
-*   **Assistance:** Gemini-CLI for project guidance and code generation.
+*   **Code Institute:** For the comprehensive material and structure of the Full Stack Software Development (Predictive Analytics) course this project was based on.
+*   **Dataset:** [Ames Housing Dataset](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) from Kaggle.
+*   **Assistance:** Gemini-CLI for project guidance, code generation, and documentation enhancement.
+*   **Tools:** Jupyter Notebook for data analysis and model development.
